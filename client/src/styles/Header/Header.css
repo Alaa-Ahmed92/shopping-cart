@@ -15,4 +15,5 @@ main {
 
 header {
   grid-area: header;
+  background-color: blue;
 }
