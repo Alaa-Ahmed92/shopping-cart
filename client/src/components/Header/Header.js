@@ -2,7 +2,7 @@ import React from 'react';
 import '../../styles/Header/Header.css';
 import { messages } from '../../messages';
 
-function Header() {
+const Header = () => {
     return (
         <header>{messages.header}</header>
     )
