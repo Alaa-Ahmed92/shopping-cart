@@ -1,0 +1,10 @@
+.cartWrapper {
+  padding: 20px;
+}
+.cartWrapper .cartItem {
+  border: 1px solid #333;
+  margin-bottom: 20px;
+}
+.cartWrapper .cartItem img {
+  width: 50px;
+}

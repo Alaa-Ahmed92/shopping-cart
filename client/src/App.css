@@ -14,8 +14,11 @@
 
 main {
   grid-area: main;
-  display: flex;
   width: 100%;
+}
+
+main .layoutWrapper {
+  display: flex;
 }
 
 main .productsWrapper {
