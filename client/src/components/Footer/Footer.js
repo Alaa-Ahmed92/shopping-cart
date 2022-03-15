@@ -2,7 +2,7 @@ import React from 'react';
 import '../../styles/Footer/Footer.css';
 import { messages } from '../../messages';
 
-function Footer() {
+const Footer = () => {
     return (
         <footer>{messages.footer}</footer>
     )

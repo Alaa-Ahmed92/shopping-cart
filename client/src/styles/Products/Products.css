@@ -1,0 +1,18 @@
+.productsWrapper {
+  display: flex;
+  justify-content: space-around;
+}
+.productsWrapper .productItem {
+  border: 1px solid #ddd;
+  max-height: 200px;
+}
+.productsWrapper .productItem .productImg img {
+  height: 150px;
+}
+.productsWrapper .productItem .productDesc {
+  display: flex;
+  justify-content: space-around;
+}
+.productsWrapper .productItem .productDesc h4 {
+  margin: 0;
+}
