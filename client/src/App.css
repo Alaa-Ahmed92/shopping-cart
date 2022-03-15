@@ -25,4 +25,5 @@ main .productsWrapper {
 
 main .filterWrapper {
   width: 30%;
+  padding: 20px;
 }
