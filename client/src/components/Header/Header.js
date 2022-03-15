@@ -1,9 +1,10 @@
 import React from 'react';
 import '../../styles/Header/Header.css';
+import { messages } from '../../messages';
 
 function Header() {
     return (
-        <header>Header</header>
+        <header>{messages.header}</header>
     )
 }
 

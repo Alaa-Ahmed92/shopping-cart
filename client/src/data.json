@@ -1,0 +1,46 @@
+[
+    {
+        "id": "id1",
+        "title": "Product 1",
+        "imageUrl": "/images/img1.jpg",
+        "desc": "This is product 1",
+        "price": 40,
+        "sizes": [
+            "M",
+            "L"
+        ]
+    },
+    {
+        "id": "id2",
+        "title": "Product 2",
+        "imageUrl": "/images/img2.jpg",
+        "desc": "This is product 2",
+        "price": 23,
+        "sizes": [
+            "M",
+            "XL"
+        ]
+    },
+    {
+        "id": "id3",
+        "title": "Product 3",
+        "imageUrl": "/images/img3.jpg",
+        "desc": "This is product 3",
+        "price": 56,
+        "sizes": [
+            "S",
+            "M"
+        ]
+    },
+    {
+        "id": "id4",
+        "title": "Product 4",
+        "imageUrl": "/images/img4.jpg",
+        "desc": "This is product 4",
+        "price": 88,
+        "sizes": [
+            "L",
+            "XL"
+        ]
+    }
+]

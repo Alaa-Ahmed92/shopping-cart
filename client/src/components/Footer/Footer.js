@@ -1,9 +1,10 @@
 import React from 'react';
 import '../../styles/Footer/Footer.css';
+import { messages } from '../../messages';
 
 function Footer() {
     return (
-        <footer>Footer</footer>
+        <footer>{messages.footer}</footer>
     )
 }
 
