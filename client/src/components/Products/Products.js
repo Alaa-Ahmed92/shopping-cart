@@ -30,7 +30,7 @@ class Products extends Component {
                                 <h4>{product.title}</h4>
                                 <span>${product.price}</span>
                             </div>
-                            <button>Add To Cart</button>
+                            <button onClick={() => this.props.handleAddToCart(product)}>Add To Cart</button>
                         </div>
                     ))
                 }
