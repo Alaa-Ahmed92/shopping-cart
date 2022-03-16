@@ -7,6 +7,7 @@ import Cart from './components/Cart/Cart';
 import { messages } from './messages';
 import data from './data.json';
 import './App.css';
+import store from './store';
 
 class App extends Component {
   state = {
@@ -18,6 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log(store.getState());
     let getCartItems = JSON.parse(window.localStorage.getItem(('cartItems')));
     this.setState({ cartItems: getCartItems })
   }
