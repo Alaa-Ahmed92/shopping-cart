@@ -79,10 +79,11 @@ class App extends Component {
         <main>
           <div className='layoutWrapper'>
             <Products handleAddToCart={this.handleAddToCart} />
-            <Filter
+            {/* <Filter
               {...this.state}
               handleChangeSize={this.handleChangeSize}
-              handleChangeSort={this.handleChangeSort} />
+              handleChangeSort={this.handleChangeSort} /> */}
+              <Filter />
           </div>
           <Cart cartItems={this.state.cartItems} handleRemoveFromCart={this.handleRemoveFromCart} />
         </main>
