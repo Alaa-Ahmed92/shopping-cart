@@ -10,7 +10,6 @@ router.get('/api/products', async (req, res) => {
 router.post('/api/products', async (req, res) => {
     const newProduct = new Product(req.body);
     const saveProduct = await newProduct.save();
-    console.log(req.body);
     res.send(saveProduct);
 });
 

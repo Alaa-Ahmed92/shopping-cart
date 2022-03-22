@@ -12,7 +12,6 @@ class Cart extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.user);
     }
 
     handleFormValue = (e) => {
@@ -35,7 +34,7 @@ class Cart extends Component {
                 </div>
                 <div className='cartList'>
                     {cartItems.map(item => (
-                        <div key={item.id} className='cartItem'>
+                        <div key={item._id} className='cartItem'>
                             <div className='itemImg'>
                                 <img src={item.imageUrl} alt={item.title} />
                             </div>
