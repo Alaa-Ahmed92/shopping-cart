@@ -1,7 +1,6 @@
-const initalState = {
-    appName: 'MERN'
-}
+import { combineReducers } from 'redux';
+import { productsReducer } from './productReducer';
 
-export const rootReducer = (state = initalState, action) => {
-    return state;
-};
+export const rootReducer = combineReducers({
+    productsList: productsReducer
+})
