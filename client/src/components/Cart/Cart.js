@@ -3,6 +3,7 @@ import Checkout from '../Checkout/Checkout';
 import '../../styles/Cart/Cart.css';
 import { connect } from 'react-redux';
 import { removeFromCart } from '../../actions/cartActions';
+import { createOrder, clearOrder } from '../../actions/orderActions';
 import { CartModal } from './CartModal';
 
 class Cart extends Component {
@@ -17,10 +18,12 @@ class Cart extends Component {
     handleFormSubmit = (e) => {
         e.preventDefault();
         const { user } = this.state;
+        const { createOrder } = this.props;
         const order = {
             name: user.name,
             email: user.email
         }
+        createOrder(order);
         if (order) { this.setState({ showOrder: true }) }
     }
 
@@ -33,7 +36,11 @@ class Cart extends Component {
         }));
     }
 
-    closeModal = () => this.setState({ showOrder: false });
+    closeModal = () => {
+        this.props.clearOrder();
+        this.handleCheckoutForm(false);
+        this.setState({ showOrder: false });
+    }
 
     render() {
         const { showForm, user, showOrder } = this.state;
@@ -87,7 +94,8 @@ class Cart extends Component {
 };
 
 const mapStateToProps = state => ({
+    order: state.order.order,
     cartItems: state.cart.cartItems
 });
 
-export default connect(mapStateToProps, { removeFromCart })(Cart);
+export default connect(mapStateToProps, { removeFromCart, createOrder, clearOrder })(Cart);

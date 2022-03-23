@@ -1,6 +1,7 @@
 import {
     ADD_TO_CART,
-    REMOVE_FROM_CART
+    REMOVE_FROM_CART,
+    CLEAR_CART
 } from '../actions/actionTypes';
 
 const initalState = {
@@ -18,6 +19,11 @@ export const cartReducer = (state = initalState, action) => {
             return {
                 ...state,
                 cartItems: action.data.cartItems
+            }
+        case CLEAR_CART:
+            return {
+                ...state,
+                products: []
             }
         default:
             return state;
