@@ -5,6 +5,7 @@ import ReactModal from 'react-modal';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchProductsAction } from '../../actions/productActions';
+import { addToCart } from '../../actions/cartActions';
 import { filteredProducts, getProductsError, getProductsPending } from '../../selectors/productsSelector';
 ReactModal.setAppElement('*');
 
@@ -25,7 +26,7 @@ class Products extends Component {
     closeModal = () => this.setState({ product: false });
 
     render() {
-        const { errors, pending, products } = this.props;
+        const { errors, pending, products, addToCart } = this.props;
         const loadingElement = pending === true && <div>Loading</div>;
         const errorsElements = errors && <div>{errors}</div>;
         return (
@@ -43,7 +44,7 @@ class Products extends Component {
                             <h4>{product.title}</h4>
                             <span>${product.price}</span>
                         </div>
-                        <button onClick={() => this.props.handleAddToCart(product)}>Add To Cart</button>
+                        <button onClick={() => addToCart(product)}>Add To Cart</button>
                     </div>
                 ))}
                 <ProductModal product={this.state.product} closeModal={this.closeModal} />
@@ -60,7 +61,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-    fetchProducts: fetchProductsAction
+    fetchProducts: fetchProductsAction,
+    addToCart
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
