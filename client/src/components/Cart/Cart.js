@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Checkout from '../Checkout/Checkout';
 import '../../styles/Cart/Cart.css';
+import { connect } from 'react-redux';
+import { removeFromCart } from '../../actions/cartActions';
 
 class Cart extends Component {
     state = {
@@ -25,7 +27,7 @@ class Cart extends Component {
 
     render() {
         const { showForm } = this.state;
-        const { cartItems, handleRemoveFromCart } = this.props;
+        const { cartItems, removeFromCart } = this.props;
         return (
             <div className='cartWrapper'>
                 <hr />
@@ -43,7 +45,7 @@ class Cart extends Component {
                                 <div>${item.price}</div>
                                 <div>{item.qty}</div>
                             </div>
-                            <button onClick={() => handleRemoveFromCart(item)}>&times;</button>
+                            <button onClick={() => removeFromCart(item)}>&times;</button>
                         </div>
                     ))}
                 </div>
@@ -73,4 +75,8 @@ class Cart extends Component {
     }
 };
 
-export default Cart;
+const mapStateToProps = state => ({
+    cartItems: state.cart.cartItems
+});
+
+export default connect(mapStateToProps, { removeFromCart })(Cart);
