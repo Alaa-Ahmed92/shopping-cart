@@ -5,7 +5,7 @@ const ProductModal = (props) => {
     const { product, closeModal } = props;
     return (
         <Modal isOpen={!!product} onRequestClose={closeModal}>
-            <div key={product.id} className='productItem'>
+            <div key={product._id} className='productItem'>
                 <div className='closeIcon' onClick={closeModal}>&times;</div>
                 <div className='productImg'>
                     <a href="#">

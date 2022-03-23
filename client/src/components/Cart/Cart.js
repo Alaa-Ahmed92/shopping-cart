@@ -3,17 +3,25 @@ import Checkout from '../Checkout/Checkout';
 import '../../styles/Cart/Cart.css';
 import { connect } from 'react-redux';
 import { removeFromCart } from '../../actions/cartActions';
+import { CartModal } from './CartModal';
 
 class Cart extends Component {
     state = {
         showForm: false,
-        user: ""
+        user: "",
+        showOrder: false
     };
 
     handleCheckoutForm = (value) => this.setState({ showForm: value });
 
     handleFormSubmit = (e) => {
         e.preventDefault();
+        const { user } = this.state;
+        const order = {
+            name: user.name,
+            email: user.email
+        }
+        if (order) { this.setState({ showOrder: true }) }
     }
 
     handleFormValue = (e) => {
@@ -25,8 +33,10 @@ class Cart extends Component {
         }));
     }
 
+    closeModal = () => this.setState({ showOrder: false });
+
     render() {
-        const { showForm } = this.state;
+        const { showForm, user, showOrder } = this.state;
         const { cartItems, removeFromCart } = this.props;
         return (
             <div className='cartWrapper'>
@@ -70,6 +80,7 @@ class Cart extends Component {
                     handleFormValue={this.handleFormValue}
                     handleFormSubmit={this.handleFormSubmit}
                 />
+                <CartModal user={user} showOrder={showOrder} closeModal={this.closeModal} cartItems={cartItems} />
             </div>
         )
     }

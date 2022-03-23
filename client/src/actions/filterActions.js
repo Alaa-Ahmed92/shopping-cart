@@ -26,7 +26,7 @@ export const sortFilter = (products, value) => {
             } else if (value == 'highest') {
                 return b.price - a.price;
             } else {
-                return a.id < b.id ? 1 : -1;
+                return a._id < b._id ? 1 : -1;
             }
         });
         dispatch({
